@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Apartment</title>
+</head>
+<body>
+    <form action="/admin/add-new" method="POST">
+        <p>
+        <label for="title">Nombre</label>
+        <input type="text" maxlength="50" id="title" name="title">
+        </p>
+        <p>
+        <label for="price">Precio</label>
+        <input type="number" min="1" max="1000000" id="price" name="price" required>
+    </p>
+    <p>
+        <label for="size">Metros cuadrados m<sup>2</sup></label>
+        <input type="number" min="15" max="1000" id="size" name="size" required>
+    </p>
+    <p>
+        <label for="mainPhoto">Foto principal</label>
+        <input type="url" required id="mainPhoto" name="mainPhoto">
+    </p>
+    <input type="submit">
+    </form>
+</body>
+</html>
