@@ -1,20 +1,14 @@
-const uri = "mongodb+srv://root:root@cluster0.lo8dg.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://root:root@cluster0.lo8dg.mongodb.net/foap-apartments?retryWrites=true&w=majority";
 
-const MongoClient = require('mongodb').MongoClient;
-const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-
+const mongoose = require('mongoose');
 
 class DataBase {
-
-    static _db;
-
-    static connect() {
-        client.connect(err => {
+    // callback. "Oye, invócame cuando hayas acabado lo que tienes que hacer."
+    static connect(cb) {
+        mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, err => {
             if (err) throw err;
-            this._db = client.db('foap-apartments')
+            console.log("Conectados a la base de datos correctamente.")
+            cb(); //'cb' es de tipo Function !
         })
     }
 }
