@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Apartmentos Disponibles</title>
+</head>
+
+<body>
+    <% apartments.forEach(function(apartment) { %>
+        <div>
+            <h2>
+                <%= apartment.title %>
+            </h2>
+            <p>Price: <%= apartment.price %>
+            </p>
+            <p>Size: <%= apartment.size %>
+            </p>
+
+            <% if (typeUser=='admin' ) { %>
+
+                <a href="/admin/apartment/<%= apartment._id %>"><button>Administrar</button></a>
+
+                <% } else { %>
+                    <a href="/apartment/<%= apartment._id %>"><button>Más detalles</button></a>
+                <% } %>
+        </div>
+        <% }) %>
+</body>
+
+</html>

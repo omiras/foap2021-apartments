@@ -7,7 +7,10 @@ const Apartment = require('../models/ApartmentModel');
 
 router.get('/', async (req, res)=> {
     const allApartments = await Apartment.find();
-    res.send(allApartments);
+    res.render('index', {
+        apartments: allApartments,
+        typeUser: 'admin'
+    });
 })
 
 router.get('/add-new', (req, res) => {

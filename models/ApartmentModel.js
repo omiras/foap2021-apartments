@@ -8,7 +8,7 @@ const apartmentSchema = new mongoose.Schema({
     size: Number,
     mainPhoto: String
 })
-// Asociarlo a un modelo/colección
+// Asociarlo a un modelo/colección1.    
 // 'apartments'
 const Apartment = mongoose.model('Apartments', apartmentSchema);
 
