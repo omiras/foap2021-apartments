@@ -8,21 +8,22 @@
 </head>
 <body>
     <form action="/admin/add-new" method="POST">
+        <input type="hidden"  id="idApartment" name="idApartment" value="<%= apartment._id %>">
         <p>
         <label for="title">Nombre</label>
-        <input type="text" maxlength="50" id="title" name="title">
+        <input type="text" maxlength="50" id="title" name="title" value="<%= apartment.title %> ">
         </p>
         <p>
         <label for="price">Precio</label>
-        <input type="number" min="1" max="1000000" id="price" name="price" required>
+        <input type="number" min="1" max="1000000" id="price" name="price" required value="<%= apartment.price %>">
     </p>
     <p>
         <label for="size">Metros cuadrados m<sup>2</sup></label>
-        <input type="number" min="15" max="1000" id="size" name="size" required>
+        <input type="number" min="15" max="1000" id="size" name="size" required value="<%= apartment.size %>">
     </p>
     <p>
         <label for="mainPhoto">Foto principal</label>
-        <input type="url" required id="mainPhoto" name="mainPhoto">
+        <input type="url" required id="mainPhoto" name="mainPhoto" value="<%= apartment.mainPhoto %>">
     </p>
     <input type="submit">
     </form>
