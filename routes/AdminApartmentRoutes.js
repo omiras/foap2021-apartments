@@ -18,6 +18,19 @@ router.get('/apartment/:idApartment', async (req, res) => {
     })
 })
 
+// apartment/u34yeurweu3432423/delete --> hacer que el
+// apartamento indetificado con el _id: u34yeurweu3432423; ya no esté disponible para alquilar
+router.get('/apartment/:idApartment/delete', async (req, res) => {
+    // buscar el apartmento en la colección Apartments
+    const idApartment = req.params.idApartment;
+
+    const apartment = await Apartment.findById(idApartment);
+    apartment.fechaBaja = Date();
+    await apartment.save();
+
+    res.send(`El apartamento ${idApartment} ha sido dado de baja.`)
+})
+
 router.get('/', async (req, res)=> {
     const allApartments = await Apartment.find();
     res.render('index', {
@@ -39,6 +52,10 @@ router.post('/add-new', async (req, res) => {
     const idApartment = req.body.idApartment;
     if (idApartment) {
         // Realizar un updateOne !!
+
+        // 1. recuperar findByID el documento
+        // 2. Modificar todos los campos del documento
+        // 3. hacer el .save()
         console.log('Queremos modificar el apartmento! Usa Mongoose para hacerlo!')
         return res.send('Modificar apartamento!');
     }

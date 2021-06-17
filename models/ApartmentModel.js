@@ -6,7 +6,8 @@ const apartmentSchema = new mongoose.Schema({
     title: String,
     price: Number,
     size: Number,
-    mainPhoto: String
+    mainPhoto: String,
+    fechaBaja: Date
 })
 // Asociarlo a un modelo/colección1.    
 // 'apartments'

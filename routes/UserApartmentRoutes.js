@@ -18,6 +18,11 @@ router.get('/apartment/:idApartment', async (req, res) => {
 // Definimos las rutas de los clientes "normales" (los que quieren alquilar los apartamentos)
 
 router.get('/', async (req, res) => {
+    // Estoy recuperando todos los apartamentos!! Solo tengo que recuperar aquellos que NO tienen fechaBaja!
+    // Falta implementarlo!
+
+    // Tengo que modificar el find() para que recupere todos los documentos que NO tienen fecha de baja (diferente de null!)
+    
     const allApartments = await Apartment.find();
     res.render('index', {
         apartments: allApartments,

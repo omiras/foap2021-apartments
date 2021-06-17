@@ -27,5 +27,8 @@
     </p>
     <input type="submit">
     </form>
+    <% if (apartment._id) {%> 
+    <a href="/admin/apartment/<%= apartment._id %>/delete"><button>Dar de baja</button></a>
+    <% } %> 
 </body>
 </html>
