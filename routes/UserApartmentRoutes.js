@@ -22,12 +22,40 @@ router.get('/', async (req, res) => {
     // Falta implementarlo!
 
     // Tengo que modificar el find() para que recupere todos los documentos que NO tienen fecha de baja (diferente de null!)
-    
+
     const allApartments = await Apartment.find();
     res.render('index', {
         apartments: allApartments,
-        typeUser: 'user'
+        typeUser: 'user',
+        filters: {}
     });
+})
+
+router.get('/search', async (req, res) => {
+    // 1. Mirar si está informado el campo 'price'
+    // 2. Si lo está, al hacer la consulta de todos los apartamentos disponibles a través de Mongoose; añadir el filtro (es decir, todos los apartamentos cuyo 'price' es menor o igual al valor que me han pasado en la QueryString)
+    // Renderizar la vista
+
+    const { price } = req.query;
+
+    let query = {};
+    let filters = {};
+
+    if (price) {
+        query.price = { $lte: price };
+        filters.price = price;
+    }
+
+    // if (capacity) ... hacer lo mismo
+    // if (city) ... igual
+
+    const apartments = await Apartment.find(query)
+
+    res.render('index', {
+        apartments: apartments,
+        typeUser: 'user',
+        filters : filters
+    })
 })
 
 module.exports = router;

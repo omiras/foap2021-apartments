@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <h2>Filtros de búsqueda</h2>
+    <form action="/search" method="GET">
+        <label for="price">Max Price</label>
+        <input type="number" min="0" max="1000000" id="price" name="price" value="<%= filters.price %>">
+        <input type="submit" value="Filtrar">
+    </form>
     <% apartments.forEach(function(apartment) { %>
         <div>
             <h2>
