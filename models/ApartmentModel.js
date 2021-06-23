@@ -11,6 +11,8 @@ const apartmentSchema = new mongoose.Schema({
 })
 // Asociarlo a un modelo/colección1.    
 // 'apartments'
+// Te crea una instancia de la clase Model. Se encarga de relacionar el esquema del dominio (creado mediante código JavaScript); con la colección 'Apartments' en base de datos.
+// Establece los mecanismos suficientes y necesarios para ofrecer las mismas funcionalidad que el driver nativo de mongodb
 const Apartment = mongoose.model('Apartments', apartmentSchema);
 
 // Exportar el MODELO

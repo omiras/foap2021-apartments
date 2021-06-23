@@ -24,6 +24,24 @@ router.get('/', async (req, res) => {
     // Tengo que modificar el find() para que recupere todos los documentos que NO tienen fecha de baja (diferente de null!)
 
     const allApartments = await Apartment.find();
+
+    /**
+     * const mongodb = requure('mongodb')
+     * 
+     * class Model {
+     * 
+     *   constructor(collection, database) {
+     *   this.collection = collection;
+     * this.database = database;
+     * }
+     * 
+     *   find(query) {
+     *    const results =   mongodb.db(this.database).collection('this.collection').find(query)
+     * return results;
+     *   }
+     * }
+     */
+
     res.render('index', {
         apartments: allApartments,
         typeUser: 'user',
