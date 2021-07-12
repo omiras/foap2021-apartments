@@ -1,3 +1,4 @@
+const puppeteer = require('puppeteer');
 
 // -- e2e tests --
 test('crear apartamento. Puedo crear un apartamento y luego listarlo en la lista de apartamentos', ()=>{
