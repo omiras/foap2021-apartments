@@ -1,4 +1,4 @@
-const uri = "PONTUCONNECTIONSTRING/foap-apartments?retryWrites=true&w=majority";
+const uri = "mongodb+srv://root:root@cluster0.lo8dg.mongodb.net/foap-apartments?retryWrites=true&w=majority";
 
 const mongoose = require('mongoose');
 
