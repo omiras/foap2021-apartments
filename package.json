@@ -20,5 +20,9 @@
   "devDependencies": {
     "jest": "^27.0.6",
     "puppeteer": "^10.1.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testTimeout": 60000
   }
 }
