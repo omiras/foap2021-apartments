@@ -1,4 +1,4 @@
-const uri = "mongodb+srv://root:root@cluster0.lo8dg.mongodb.net/foap-apartments?retryWrites=true&w=majority";
+const uri = "'mongodb+srv://oscar:oscar@cluster0.c8tq0vp.mongodb.net/foap-2024'";
 
 const mongoose = require('mongoose');
 
